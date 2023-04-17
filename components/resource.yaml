@@ -1,14 +1,30 @@
 apiVersion: delivery.ocm.software/v1alpha1
 kind: Resource
 metadata:
-  name: podinfo-deployment
-  namespace: ocm-system
+  name: {{ .Parameters.Name }}
+  namespace: {{ .Component.Namespace }}
 spec:
-  interval: 10m0s
+  interval: 1m0s
   componentVersionRef:
-    name: podifytest
-    namespace: ocm-system
+    name: {{ .Component.Name }}
+    namespace: {{ .Component.Namespace }}
   resource:
-    name: deploy
-  snapshotTemplate:
-    name: podinfo-deployment
+    name: {{ .Resource }}
+    {{ with .Component.Reference  }}
+    referencePath:
+    - name: {{ . }}
+    {{ end }}
+# apiVersion: delivery.ocm.software/v1alpha1
+# kind: Resource
+# metadata:
+#   name: podinfo-deployment
+#   namespace: ocm-system
+# spec:
+#   interval: 10m0s
+#   componentVersionRef:
+#     name: podifytest
+#     namespace: ocm-system
+#   resource:
+#     name: deploy
+#   snapshotTemplate:
+#     name: podinfo-deployment
