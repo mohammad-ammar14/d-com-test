@@ -6,7 +6,7 @@ metadata:
 spec:
   interval: 10m0s
   componentVersionRef:
-    name: podinfo
+    name: podifytest
     namespace: ocm-system
   resource:
     name: deploy
