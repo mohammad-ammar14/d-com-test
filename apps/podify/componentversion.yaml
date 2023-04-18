@@ -9,7 +9,7 @@ spec:
   version:
     semver: v1.0.3
   repository:
-    url: ghcr.io/sidhishruti22
+    url: artefact-transfer-test.int.repositories.cloud.sap
     secretRef:
       name: creds
   references:
