@@ -11,12 +11,12 @@ spec:
   repository:
     url: artefact-transfer-test.int.repositories.cloud.sap
     secretRef:
-      name: creds
+      name: acreds
   references:
     expand: true
-  verify:
-  - name: key
-    publicKey:
-      secretRef:
-        name: publickey  
+  # verify:
+  # - name: key
+  #   publicKey:
+  #     secretRef:
+  #       name: publickey  
 
